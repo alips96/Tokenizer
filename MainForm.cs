@@ -55,6 +55,7 @@ namespace TokenizerProject
         private void SetupStateRefrences()
         {
             currentState = new InitialState(this);
+
             initialState = new InitialState(this);
             digitState = new Digit(this);
             digitDotState = new DigitDot(this);
