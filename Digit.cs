@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace TokenizerProject
 {
-    class Digit
+    public class Digit : IState
     {
+        public void UpdateState()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

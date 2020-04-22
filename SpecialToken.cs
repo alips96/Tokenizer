@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TokenizerProject
 {
-    public class RealNumberDotDigit
+    public class SpecialToken
     {
     }
 }

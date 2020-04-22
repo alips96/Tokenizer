@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TokenizerProject
 {
-    class RealNumber
+    public class RealNumber
     {
     }
 }

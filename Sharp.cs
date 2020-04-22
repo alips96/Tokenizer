@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TokenizerProject
 {
-    class Sharp
+    public class Sharp
     {
     }
 }

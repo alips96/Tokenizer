@@ -12,6 +12,17 @@ namespace TokenizerProject
         //States
         public IState currentState;
         public InitialState initialState;
+        public Digit digitState;
+        public DigitDot digitDotState;
+        public RealNumber realNumberState;
+        public RealNumberDot realNumberDotState;
+        public RealNumberDotDigit realNumberDotDigitState;
+        public RealNumberDotDigitDot realNumberDotDigitDotState;
+        public Sharp sharpState;
+        public Hashtag hashtagState;
+        public SpecialToken specialTokenState;
+
+
         public FarsiCharState farsiCharState;
         public FarsiNomState farsiNomState;
         public EnglishCharState englishCharState;

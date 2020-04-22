@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TokenizerProject
 {
-    class DigitDot
+    public class DigitDot
     {
     }
 }
