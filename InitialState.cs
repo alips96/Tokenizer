@@ -106,5 +106,25 @@ namespace TokenizerProject
 
             mainForm.tokensLinkedList.RemoveFirst();
         }
+
+        public void ToDigitState()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void ToSharpState()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void ToSpecialTokenState()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void ToDigitDotState()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

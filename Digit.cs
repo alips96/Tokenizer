@@ -8,6 +8,12 @@ namespace TokenizerProject
 {
     public class Digit : IState
     {
+        MainForm mainForm;
+        public Digit(MainForm _mainForm)
+        {
+            mainForm = _mainForm;
+        }
+
         public void UpdateState()
         {
             throw new NotImplementedException();

@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace TokenizerProject
 {
-    public class IPAddress : IState
+    public class UnknownToken : IGetBackToInitialState
     {
         MainForm mainForm;
-        public IPAddress(MainForm _mainForm)
+        public UnknownToken(MainForm _mainForm)
         {
             mainForm = _mainForm;
+        }
+
+        public void ToInitialState()
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateState()

@@ -5,9 +5,11 @@
     /// </summary>
     public interface IInitialState : IState
     {
+        void ToDigitState();
+        void ToSharpState();
+        void ToSpecialTokenState();
         void ToFarsiCharState();
-        void ToFarsiNomState();
+        void ToDigitDotState();
         void ToEnglishCharState();
-        void ToEnglishNomState();
     }
 }

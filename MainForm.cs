@@ -21,6 +21,7 @@ namespace TokenizerProject
         public Sharp sharpState;
         public Hashtag hashtagState;
         public SpecialToken specialTokenState;
+        public UnknownToken unknownTokenState;
 
 
         public FarsiCharState farsiCharState;
@@ -55,6 +56,13 @@ namespace TokenizerProject
         {
             currentState = new InitialState(this);
             initialState = new InitialState(this);
+            digitState = new Digit(this);
+            digitDotState = new DigitDot(this);
+            realNumberState = new RealNumber(this);
+            realNumberDotState = new RealNumberDot(this);
+            realNumberDotDigitState = new RealNumberDotDigit(this);
+            realNumberDotDigitDotState = new RealNumberDotDigitDot(this);
+
             farsiCharState = new FarsiCharState(this);
             farsiNomState = new FarsiNomState(this);
             englishCharState = new EnglishCharState(this);

@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace TokenizerProject
 {
-    public class RealNumberDot
+    public class RealNumberDot : IState
     {
+        MainForm mainForm;
+        public RealNumberDot(MainForm _mainForm)
+        {
+            mainForm = _mainForm;
+        }
+
+        public void UpdateState()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

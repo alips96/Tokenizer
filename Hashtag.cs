@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace TokenizerProject
 {
-    public class Hashtag
+    public class Hashtag : IState
     {
+        MainForm mainForm;
+        public Hashtag(MainForm _mainForm)
+        {
+            mainForm = _mainForm;
+        }
+
+        public void UpdateState()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
