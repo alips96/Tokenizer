@@ -74,17 +74,17 @@ namespace TokenizerProject
         {
             int ascii = Convert.ToInt32(mainForm.tokensLinkedList.First());
 
-            if (ascii > 0 && ascii <= 32)
+            if (!(ascii > 0 && ascii <= 32))
             {
                 mainForm.currentToken += mainForm.tokensLinkedList.First();
             }
 
             mainForm.tokensLinkedList.RemoveFirst();
 
-            if (mainForm.tokensLinkedList.Count == 0)
-            {
-                WriteCurrentTokenInList();
-            }
+            //if (mainForm.tokensLinkedList.Count == 0)
+            //{
+            //    WriteCurrentTokenInList();
+            //}
         }
     }
 }
