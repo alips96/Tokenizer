@@ -87,8 +87,13 @@ namespace TokenizerProject
                     ToDigitDotState();
                 }
                 else
-                    if ((currentChar >= 33 && currentChar <= 45) ||  //if it is a special character(exept .)
-                        currentChar == 47 ||
+                    if(currentChar == 35) //if it is a '#'
+                {
+                    ExtendCurrentToken();
+                    ToSharpState();
+                }
+                else
+                    if ((currentChar >= 33 && currentChar <= 47) ||  //if it is a special character
                         (currentChar >= 58 && currentChar <= 64) ||
                         currentChar >= 91 && currentChar <= 96 ||
                         currentChar >= 123 && currentChar <= 126)
