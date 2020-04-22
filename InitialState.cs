@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace TokenizerProject
 {
@@ -54,15 +55,20 @@ namespace TokenizerProject
             {
                 int currentChar = mainForm.plainTextQueue.Dequeue(); //extracts the first element of queue.
 
-                if (currentChar >= 1776 && currentChar <= 1785) //if it is a farsi number.
+                if (currentChar >= 48 && currentChar <= 57) //if it is an english number.
                 {
                     ExtendCurrentToken();
-                    //ToFarsiNomState();
+                    ToDigitState();
                 }
                 else
                     if ((currentChar >= 1570 && currentChar <= 1607) || //if it is a farsi character.
                         currentChar == 1662 ||
-                        currentChar == 1740)
+                        currentChar == 1705 ||
+                        currentChar == 1711 ||
+                        currentChar == 1608 ||
+                        currentChar == 1662 ||
+                        currentChar == 1740 ||
+                        currentChar == 1670)
                 {
                     ExtendCurrentToken();
                     ToFarsiCharState();
@@ -75,22 +81,24 @@ namespace TokenizerProject
                     ToEnglishCharState();
                 }
                 else
-                    if (currentChar >= 48 && currentChar <= 57) //if it is an english number.
+                    if (currentChar == 46) //if it is a '.'
                 {
                     ExtendCurrentToken();
-                    //ToEnglishNomState();
+                    ToDigitDotState();
                 }
                 else
-                    if ((currentChar >= 33 && currentChar <= 47) ||  //if it is a special character.
+                    if ((currentChar >= 33 && currentChar <= 45) ||  //if it is a special character(exept .)
+                        currentChar == 47 ||
                         (currentChar >= 58 && currentChar <= 64) ||
                         currentChar >= 91 && currentChar <= 96 ||
                         currentChar >= 123 && currentChar <= 126)
                 {
                     ExtendCurrentToken();
-                    WriteCurrentTokenInList();
+                    //WriteCurrentTokenInList();
+                    ToSpecialTokenState();
                 }
                 else
-                    if(currentChar == 32)
+                    if(currentChar > 0 && currentChar <= 32)
                 {
                     mainForm.tokensLinkedList.RemoveFirst();
                 }
@@ -101,15 +109,17 @@ namespace TokenizerProject
             }
         }
 
-        private void WriteCurrentTokenInList()
-        {
-            mainForm.tokensList.Add(new Token(mainForm.currentToken, "Special Token"));
-            mainForm.currentToken = null;
-        }
+        //private void WriteCurrentTokenInList()
+        //{
+        //    mainForm.tokensList.Add(new Token(mainForm.currentToken, "Special Token"));
+        //    mainForm.currentToken = null;
+        //}
 
         private void ExtendCurrentToken()
         {
-            if (mainForm.tokensLinkedList.First() != ' ')
+            int ascii = Convert.ToInt32(mainForm.tokensLinkedList.First());
+
+            if (ascii > 0 && ascii <= 32)
             {
                 mainForm.currentToken += mainForm.tokensLinkedList.First();
             }
