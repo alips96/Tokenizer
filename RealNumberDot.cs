@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TokenizerProject
 {
-    public class RealNumberDot : IState
+    public class RealNumberDot : IGetBackToInitialState
     {
         MainForm mainForm;
         public RealNumberDot(MainForm _mainForm)
