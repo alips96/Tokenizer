@@ -18,6 +18,7 @@ namespace TokenizerProject
         public RealNumberDot realNumberDotState;
         public RealNumberDotDigit realNumberDotDigitState;
         public RealNumberDotDigitDot realNumberDotDigitDotState;
+        public IPAddress ipAddressState;
         public Sharp sharpState;
         public Hashtag hashtagState;
         public SpecialToken specialTokenState;
@@ -63,6 +64,7 @@ namespace TokenizerProject
             realNumberDotState = new RealNumberDot(this);
             realNumberDotDigitState = new RealNumberDotDigit(this);
             realNumberDotDigitDotState = new RealNumberDotDigitDot(this);
+            ipAddressState = new IPAddress(this);
 
             farsiCharState = new FarsiCharState(this);
             farsiNomState = new FarsiNomState(this);
