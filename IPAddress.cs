@@ -28,7 +28,7 @@ namespace TokenizerProject
         {
             if (mainForm.plainTextQueue.Count > 0)
             {
-                int currentChar = mainForm.plainTextQueue.Last(); //finds the first element of queue.
+                int currentChar = mainForm.plainTextQueue.First(); //finds the first element of queue.
 
                 if (currentChar >= 48 && currentChar <= 57) //if it is a number again.
                 {

@@ -25,7 +25,7 @@ namespace TokenizerProject
         {
             if (mainForm.plainTextQueue.Count > 0)
             {
-                int currentChar = mainForm.plainTextQueue.Last(); //finds the first element of queue.
+                int currentChar = mainForm.plainTextQueue.First(); //finds the first element of queue.
 
                 if ((currentChar >= 1570 && currentChar <= 1607) || //if it is a farsi character.
                         currentChar == 1662 ||

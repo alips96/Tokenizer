@@ -65,6 +65,9 @@ namespace TokenizerProject
             realNumberDotDigitState = new RealNumberDotDigit(this);
             realNumberDotDigitDotState = new RealNumberDotDigitDot(this);
             ipAddressState = new IPAddress(this);
+            sharpState = new Sharp(this);
+            hashtagState = new Hashtag(this);
+            specialTokenState = new SpecialToken(this);
 
             farsiCharState = new FarsiCharState(this);
             farsiNomState = new FarsiNomState(this);
