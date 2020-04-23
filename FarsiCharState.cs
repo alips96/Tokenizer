@@ -35,6 +35,7 @@ namespace TokenizerProject
                         currentChar == 1662 ||
                         currentChar == 1740 ||
                         currentChar == 1670 ||
+                        currentChar == 1548 ||
                         currentChar == 8204) //Half_space
                 {
                     mainForm.plainTextQueue.Dequeue();
