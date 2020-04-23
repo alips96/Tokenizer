@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace TokenizerProject
 {
@@ -24,35 +25,27 @@ namespace TokenizerProject
         {
             if (mainForm.plainTextQueue.Count > 0)
             {
-                int currentChar = mainForm.plainTextQueue.Dequeue(); //extracts the first element of queue.            
+                int currentChar = mainForm.plainTextQueue.Last(); //finds the first element of queue.
 
-                if (currentChar == 32) //if it is a space.
+                if ((currentChar >= 65 && currentChar <= 90) || //if it is an english character.
+                        (currentChar >= 97 && currentChar <= 122) ||
+                        currentChar == 44) // if it is a ','
                 {
+                    //mainForm.plainTextQueue.Dequeue();
+                    //ExtendCurrentToken();
+                    //ToDigitDotState();
+                    mainForm.plainTextQueue.Dequeue();
                     ExtendCurrentToken();
-                    WriteCurrentTokenInList();
-                    ToInitialState();
-                }
-                else
-                    if ((currentChar >= 33 && currentChar <= 47) ||  //if it is a special character.
-                    (currentChar >= 58 && currentChar <= 64) ||
-                    currentChar >= 91 && currentChar <= 96 ||
-                    currentChar >= 123 && currentChar <= 126)
-                {
-                    WriteCurrentTokenInList();
-                    mainForm.currentToken += mainForm.tokensLinkedList.First();
-                    mainForm.tokensLinkedList.RemoveFirst();
-                    mainForm.tokensList.Add(new Token(mainForm.currentToken, "Special Token"));
-                    mainForm.currentToken = null;
-                    ToInitialState();
                 }
                 else
                 {
-                    ExtendCurrentToken();
+                    WriteCurrentTokenInList();
+                    ToInitialState();
                 }
             }
             else
             {
-                if(mainForm.currentToken != null)
+                if (mainForm.currentToken != null)
                 {
                     WriteCurrentTokenInList();
                 }
@@ -63,23 +56,25 @@ namespace TokenizerProject
 
         private void WriteCurrentTokenInList()
         {
-            mainForm.tokensList.Add(new Token(mainForm.currentToken, "English Char Token"));
+            mainForm.tokensList.Add(new Token(mainForm.currentToken, "English Letter Token"));
             mainForm.currentToken = null;
         }
 
         private void ExtendCurrentToken()
         {
-            if(mainForm.tokensLinkedList.First() != ' ')
+            int ascii = Convert.ToInt32(mainForm.tokensLinkedList.First());
+
+            if (!(ascii > 0 && ascii <= 32))
             {
                 mainForm.currentToken += mainForm.tokensLinkedList.First();
             }
 
             mainForm.tokensLinkedList.RemoveFirst();
 
-            if(mainForm.tokensLinkedList.Count == 0)
-            {
-                WriteCurrentTokenInList();
-            }
+            //if (mainForm.tokensLinkedList.Count == 0)
+            //{
+            //    WriteCurrentTokenInList();
+            //}
         }
     }
 }
