@@ -37,9 +37,6 @@ namespace TokenizerProject
                         currentChar == 1670 ||
                         currentChar == 8204) //Half_space
                 {
-                    //mainForm.plainTextQueue.Dequeue();
-                    //ExtendCurrentToken();
-                    //ToDigitDotState();
                     mainForm.plainTextQueue.Dequeue();
                     ExtendCurrentToken();
                 }
@@ -76,11 +73,6 @@ namespace TokenizerProject
             }
 
             mainForm.tokensLinkedList.RemoveFirst();
-
-            //if (mainForm.tokensLinkedList.Count == 0)
-            //{
-            //    WriteCurrentTokenInList();
-            //}
         }
     }
 }

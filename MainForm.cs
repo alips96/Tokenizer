@@ -22,14 +22,9 @@ namespace TokenizerProject
         public Sharp sharpState;
         public Hashtag hashtagState;
         public SpecialToken specialTokenState;
-        public UnknownToken unknownTokenState;
-
-
         public FarsiCharState farsiCharState;
-        public FarsiNomState farsiNomState;
         public EnglishCharState englishCharState;
-        public EnglishNomState englishNomState;
-        
+
         //Main Queue holding ascii codes
         public Queue<int> plainTextQueue = new Queue<int>();
 
@@ -68,11 +63,8 @@ namespace TokenizerProject
             sharpState = new Sharp(this);
             hashtagState = new Hashtag(this);
             specialTokenState = new SpecialToken(this);
-
             farsiCharState = new FarsiCharState(this);
-            farsiNomState = new FarsiNomState(this);
             englishCharState = new EnglishCharState(this);
-            englishNomState = new EnglishNomState(this);
         }
 
         /// <summary>

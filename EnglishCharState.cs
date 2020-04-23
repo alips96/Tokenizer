@@ -31,9 +31,6 @@ namespace TokenizerProject
                         (currentChar >= 97 && currentChar <= 122) ||
                         currentChar == 44) // if it is a ','
                 {
-                    //mainForm.plainTextQueue.Dequeue();
-                    //ExtendCurrentToken();
-                    //ToDigitDotState();
                     mainForm.plainTextQueue.Dequeue();
                     ExtendCurrentToken();
                 }
@@ -70,11 +67,6 @@ namespace TokenizerProject
             }
 
             mainForm.tokensLinkedList.RemoveFirst();
-
-            //if (mainForm.tokensLinkedList.Count == 0)
-            //{
-            //    WriteCurrentTokenInList();
-            //}
         }
     }
 }

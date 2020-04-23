@@ -99,7 +99,6 @@ namespace TokenizerProject
                         currentChar >= 123 && currentChar <= 126)
                 {
                     ExtendCurrentToken();
-                    //WriteCurrentTokenInList();
                     ToSpecialTokenState();
                 }
                 else
@@ -113,12 +112,6 @@ namespace TokenizerProject
                 mainForm.isFinished = true; // Stops the Main While of program.
             }
         }
-
-        //private void WriteCurrentTokenInList()
-        //{
-        //    mainForm.tokensList.Add(new Token(mainForm.currentToken, "Special Token"));
-        //    mainForm.currentToken = null;
-        //}
 
         private void ExtendCurrentToken()
         {

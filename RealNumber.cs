@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TokenizerProject
 {
@@ -80,11 +77,6 @@ namespace TokenizerProject
             }
 
             mainForm.tokensLinkedList.RemoveFirst();
-
-            //if (mainForm.tokensLinkedList.Count == 0)
-            //{
-            //    WriteCurrentTokenInList();
-            //}
         }
     }
 }
